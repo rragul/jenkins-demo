@@ -10,13 +10,13 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Build docker image'){
-            steps{
-                script{
-                    sh 'docker build -t ragul05/devops-integration .'
-                }
-            }
-        }
+//         stage('Build docker image'){
+//             steps{
+//                 script{
+//                     sh 'docker build -t ragul05/devops-integration .'
+//                 }
+//             }
+//         }
 //         stage('Push image to Hub'){
 //             steps{
 //                 script{
