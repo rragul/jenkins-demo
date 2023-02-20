@@ -17,23 +17,23 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Hub'){
-            steps{
-                script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u ragul05 -p ${dockerhubpwd}'
-
-}
-                   sh 'docker push ragul05/devops-integration'
-                }
-            }
-        }
-        stage('Deploy to k8s'){
-            steps{
-                script{
-                    kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
-                }
-            }
-        }
+//         stage('Push image to Hub'){
+//             steps{
+//                 script{
+//                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+//                    sh 'docker login -u ragul05 -p ${dockerhubpwd}'
+//
+// }
+//                    sh 'docker push ragul05/devops-integration'
+//                 }
+//             }
+//         }
+//         stage('Deploy to k8s'){
+//             steps{
+//                 script{
+//                     kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
+//                 }
+//             }
+//         }
     }
 }
