@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JenkinsDemoApplication {
 
-    @GetMapping
+    @GetMapping("/")
     public String display(){
         return "Jenkins Demo";
     }
